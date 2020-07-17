@@ -1,0 +1,60 @@
+{
+    "name": "browser-which",
+    "version": "1.0.0",
+    "description": "Get the current browser",
+    "keywords": [
+        "browser",
+        "which"
+    ],
+    "homepage": "https://github.com/kingller/browser-which",
+    "bugs": {
+        "url": "https://github.com/kingller/browser-which/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kingller/browser-which.git"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Kingller Tang",
+        "url": "https://github.com/kingller"
+    },
+    "files": [
+        "dist/*",
+        "types/*",
+        "package.json",
+        "README.md"
+    ],
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "build": "npm run clean && tsc --build tsconfig.json",
+        "clean": "rimraf ./dist",
+        "eslint": "eslint --ext .tsx,.ts --fix ./lib/**/*",
+        "prepublishOnly": "npm run build"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "lib/**/*.{ts,tsx}": [
+            "npm run eslint",
+            "prettier .prettierrc.js --write"
+        ]
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/polyfill": "^7.8.7",
+        "eslint-config-pandora-typescript": "^1.0.1",
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.7",
+        "prettier": "^2.0.5",
+        "rimraf": "^3.0.2",
+        "typescript": "^3.9.5"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    }
+}
