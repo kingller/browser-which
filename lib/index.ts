@@ -1,6 +1,7 @@
 /* eslint-disable no-sparse-arrays */
 export default (function (): {
     ie: boolean;
+    edge: boolean;
     firefox: boolean;
     opera: boolean;
     chrome: boolean;
@@ -20,6 +21,8 @@ export default (function (): {
         //测试是否为ie或内核为trident，是则取得其版本号
         // @ts-ignore
         ie: !!(w.VBArray && Math.max(document.documentMode || 0, ver)), //内核trident
+        //测试是否为edge
+        edge: navigator.userAgent.indexOf('Edge') > -1,
         //测试是否为firefox，是则取得其版本号
         // @ts-ignore
         firefox: !!(w.netscape && ver), //内核Gecko
