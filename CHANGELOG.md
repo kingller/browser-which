@@ -6,6 +6,9 @@
 <font color=red><strong>删除</strong></font>
 
 
+# 1.1.1
+> 2025.08.05  
+1. <font color=red>修复</font> `Worker` 环境代码报错
 
 # 1.1.0
 > 2020.07.21  
